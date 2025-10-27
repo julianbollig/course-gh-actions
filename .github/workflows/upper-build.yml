@@ -17,7 +17,7 @@ jobs:
       - run: go version
       - uses: actions/setup-go@v5
         with:
-          go-version-file: ./upper/.go.mod
+          go-version-file: ./upper/go.mod
       - run: go version 
       - run: |
           ls
