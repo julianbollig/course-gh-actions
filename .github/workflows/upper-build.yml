@@ -18,12 +18,13 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: ./upper/go.mod
-      - run: go version 
+          cache-dependency-path: ./upper/go.sum
+      - run: go mod download
+        working-directory: upper 
       - run: |
           ls
           go build
           ls
           go test
-          ./upper foo the bar
         working-directory: upper
         name: build-and-test-upper
